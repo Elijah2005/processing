@@ -1,4 +1,6 @@
-  
+ Car name = new Car(150,2,200,200);
+ Car nam = new Car(200,5,0,10);
+Car na = new Car(225,-5,0,80);
 int x=200;
 int y=350;
 void draw(){
@@ -6,8 +8,13 @@ void draw(){
   fill(0,180,0);
   ellipse(x,y,50,50);
   Outside();
+  name.display();
+  name.move();
+  nam.display();
+  nam.move();
+  na.display();
+  na.move();
 }
-  
   void setup(){
 size(400,400);  
 }
@@ -51,18 +58,38 @@ void Outside(){
     if(y<0){
       y=25;
     }
-    
+   
   
 
 }
-class car{
+class Car{
  int size;
 int speed;
 int x;
 int y;
-car(int x,)
-  
+Car(int size,int speed,int x,int y){
+  this.size=size; this.speed=speed; this.x=x; this.y=y;
+ 
+ 
 
+}
+
+void display(){
+fill(0,255,0);
+rect(x,y,size,50);
+}
+void move(){
+  x-=speed;
+  if(x<=0){
+    x=399;
+  }
+  if(x>=400){
+    x=0;
+  }
+}
+int getX(){
+  return x;
+}
 }
 
   
